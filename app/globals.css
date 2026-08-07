@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-negro: #050505;
+  --color-blanco: #faf6ee;
+  --color-fuego: #e8401a;
+  --color-oro: #f0a500;
+  --color-verde: #0a5c36;
+  --color-ocre: #c4832a;
+  --color-gris: #777777;
+
+  --animate-marquee: marquee-scroll 18s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { overflow-x: hidden; }
+}
+
+@layer utilities {
+  .font-bebas    { font-family: var(--font-bebas,    'Bebas Neue',      sans-serif); }
+  .font-playfair { font-family: var(--font-playfair, 'Playfair Display', serif);    }
+  .font-dm       { font-family: var(--font-dm,       'DM Sans',          sans-serif); }
+  .scrollbar-hide { scrollbar-width: none; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+}
